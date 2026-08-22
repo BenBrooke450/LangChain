@@ -1,0 +1,22 @@
+[project]
+name = "langchain-folder"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "BenBrooke450", email = "bensir@mail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "black>=26.5.1",
+    "isort>=8.0.1",
+    "langchain-openai>=1.6.0",
+    "python-dotenv>=1.2.3",
+]
+
+[project.scripts]
+langchain-folder = "langchain_folder:main"
+
+[build-system]
+requires = ["uv_build>=0.12.5,<0.13.0"]
+build-backend = "uv_build"
