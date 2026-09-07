@@ -6,10 +6,12 @@ from mistralai.client import embeddings, Mistral
 from langchain_pinecone import PineconeVectorStore
 from langchain_mistralai import MistralAIEmbeddings
 import os
+from langchain_ollama import ChatOllama
+from langchain_ollama import OllamaEmbeddings
 
 load_dotenv()
 
-location = "/Users/benjaminbrooke/Downloads/Python-for-Data-Analysis.txt"
+location = "/Users/benjaminbrooke/Downloads/pinecone.txt"
 
 if __name__ == "__main__":
     loader = TextLoader(file_path=location)
@@ -20,7 +22,9 @@ if __name__ == "__main__":
 
     texts = text_splitter.split_documents(documents)
 
-    embeddings = MistralAIEmbeddings(model="mistral-embed",api_key=os.environ["MISTRAL_API_KEY"])
+    #embeddings = MistralAIEmbeddings(model="mistral-embed",api_key=os.environ["MISTRAL_API_KEY"])
+
+    embeddings = OllamaEmbeddings(model="embeddinggemma")
 
     PineconeVectorStore.from_documents(texts, embeddings, index_name=os.environ["INDEX_NAME"])
 
