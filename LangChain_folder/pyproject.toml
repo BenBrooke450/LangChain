@@ -24,6 +24,7 @@ dependencies = [
     "langchain-tavily>=0.2.18",
     "langchain-text-splitters>=1.1.2",
     "langchain-unstructured>=1.0.1",
+    "langgraph>=1.2.11",
     "mistralai>=2.9.4",
     "python-dotenv>=1.2.3",
     "unstructured>=0.27.5",
